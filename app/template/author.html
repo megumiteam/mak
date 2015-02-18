@@ -1,0 +1,33 @@
+<article ng-repeat="wp_post in wp_posts" ng-controller="the_post" id="post-{{mak_post_id()}}" class="post-{{mak_post_id()}} post archive">
+	<header class="entry-header">
+		<div class="entry-header-meta">
+			<p class="author-avatar">
+				<a ng-href="/archives/author/{{mak_author_slug()}}"><img ng-src="{{mak_author_avatar()}}" width="92" height="92" alt="{{mak_author_name()}}"></a>
+			</p>
+			<p class="author-name">
+				<a ng-href="/archives/author/{{mak_author_slug()}}">{{mak_author_name()}}</a>
+			</p>
+			<p class="entry-date"><time datetime="{{mak_post_date('yyyy-MM-ddTHH:mm:ss.sssZ')}}"><i class="fa fa-clock-o"></i>{{mak_post_date('yyyy.MM.dd HH:mm:ss')}}</time></p>
+		</div>
+		<p class="thumbnail" ng-if="mak_thumbnail('full').view">
+			<a ng-href="{{mak_permalink()}}">
+				<img class="thumbnail-{{mak_thumbnail('full').id}}" ng-src="{{mak_thumbnail('full').url}}" width="{{mak_thumbnail('full').width}" height="{{mak_thumbnail('full').height}}" alt="{{mak_thumbnail('full').title}}"><!-- On thumbnail -->
+			</a>
+		</p>
+		<h1 class="entry-title"><a ng-href="{{mak_permalink()}}">{{mak_title()}}</a></h1>
+		<p class="posted-in-category" ng-if="!!mak_terms()">
+			<i class="fa fa-folder-open-o"></i>
+			<a ng-href="{{term.link}}" title="{{term.name}}" ng-repeat="term in mak_terms()">{{term.name}}</a>
+		</p>
+		<p class="posted-in-tags" ng-if="!!mak_terms('post_tag')">
+			<i class="fa fa-tags"></i>
+			<a href="{{term.link}}" title="{{term.name}}" ng-repeat="term in mak_terms('post_tag')">{{term.name}}</a>
+		</p>
+	</header><!-- .entry-header -->
+	<section class="entry-summary" ng-if="!!mak_excerpt()">
+		<div ng-bind-html="mak_excerpt()"></div>
+	</section>
+</article><!-- #post-## -->
+{{totalpages}}
+{{total}}
+

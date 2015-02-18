@@ -1,0 +1,9 @@
+<article ng-repeat="wp_post in wp_posts" ng-controller="the_post" id="post-{{mak_post_id()}}" class="post-{{mak_post_id()}} page">
+	<header class="entry-header">
+		<h1 class="entry-title">{{mak_title()}}</h1>
+		<p class="entry-date"><time datetime="{{mak_post_date('yyyy-MM-ddTHH:mm:ss.sssZ')}}"><i class="fa fa-clock-o"></i>{{mak_post_date('yyyy.MM.dd HH:mm:ss')}}</time></p>
+	</header><!-- .entry-header -->
+	<section class="entry-content()">
+		<div ng-bind-html="mak_content()"></div>
+	</section>
+</article><!-- #post-## -->

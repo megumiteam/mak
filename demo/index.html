@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="makApp">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="fragment" content="!">
+	<base href="/">
+	<title>Media Assembly Kit</title>
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+	<link rel="stylesheet" id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css?ver=4.3.0" type="text/css" media="all">
+	<link rel="stylesheet" href="http://example.com/styles/loading-bar.css">
+	<link rel="stylesheet" href="http://example.com/styles/style.css" />
+	<!--[if lt IE 10]>
+		<script src="//cdn.rawgit.com/jpillora/xdomain/0.6.17/dist/xdomain.min.js" slave="http://master.example.com/proxy.html"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div id="page">
+		<header id="masthead" data-magellan-expedition="fixed">
+			<h1 class="site-title"><a href="/"><img src="/images/site-title@2x.png" width="184" height="34"></a></h1>
+			<nav id="header-nav-box">
+				<p class="header-menu-button" role="tab" aria-expanded="true"><i class="fa fa-bars"></i></span></p>
+				<p class="header-widget-button" role="tab" aria-expanded="false"><i class="fa fa-cogs"></i></span></p>
+			</nav>
+		</header>
+		<nav id="global-menu" class="side-nav-close" ng-controller="GlobalMenu" ng-bind-html="mak_menu"></nav>
+		<div id="content" class="row">
+			<div id="primary" class="content-area">
+				<main id="primary" ui-view="main"></main>
+			</div>
+			<div id="secondary" class="widget-area-close">
+			</div>
+		</div>
+		<footer id="footer">
+			<p id="copyright"><small>Copyright &copy; 2015 Webnist. All Rights Reserved.</small></p>
+		</footer>
+	</div>
+	<div id="overlay" class="close"></div>
+	<script src="http://example.com/vendor/jquery-1.11.2.min.js"></script>
+	<script src="http://example.com/vendor/angular.min.js"></script>
+	<script src="http://example.com/vendor/angular-animate.min.js"></script>
+	<script src="http://example.com/vendor/angular-ui-router.min.js"></script>
+	<script src="http://example.com/vendor/angular-resource.min.js"></script>
+	<script src="http://example.com/vendor/loading-bar.js"></script>
+	<script src="http://example.com/mak-config.js"></script>
+	<script src="http://example.com/core-scripts/app.js"></script>
+	<script src="http://example.com/core-scripts/factorys/factory.js"></script>
+	<script src="http://example.com/core-scripts/controllers/controller.js"></script>
+	<script src="http://example.com/core-scripts/directives/directive.js"></script>
+	<script src="http://example.com/scripts/views/view.js"></script>
+</body>
+
+</html>

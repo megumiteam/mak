@@ -69,7 +69,7 @@ Basically, the permalink format is:
 
 Demo:
 
-http://webnist.github.io/
+http://demo1.web-purine.com/
 
 You can put it on S3.
 

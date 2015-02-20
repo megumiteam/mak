@@ -45,56 +45,6 @@
 						controller: 'Archive'
 					}
 				}
-			})
-			.state('homepaged', {
-				url: '/mak/page/{paged:int}',
-				views: {
-					main: {
-						templateUrl: '../template/archive.html',
-						controller: 'Archive'
-					}
-				}
-			})
-			.state('paged', {
-				url: '/mak/archives/:tax/{terms:.+/?}/page/{paged:int}',
-				views: {
-					main: {
-						templateUrl: '../template/archive.html',
-						controller: 'Archive'
-					}
-				}
-			})
-			.state('archives', {
-				url: '/mak/archives/:tax/{terms:.+/?}',
-				views: {
-					main: {
-						templateUrl: '../template/archive.html',
-						controller: 'Archive'
-					}
-				}
-			})
-			.state('single', {
-				url: '/mak/archives/:ID',
-				views: {
-					main: {
-						templateUrl: '../template/single.html',
-						controller: 'Single'
-					}
-				}
-			})
-			/*
-			.state('page', {
-				url: '/mak/{pagename:.*}',
-				views: {
-					main: {
-						templateUrl: '../template/page.html',
-						controller: 'Pages'
-					}
-				}
-			})
-			*/
-			.state('404', {
-				templateUrl: '../template/404.html'
 			});
 
 		cfpLoadingBarProvider.includeBar = true;

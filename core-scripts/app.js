@@ -41,7 +41,7 @@
 				url: '/',
 				views: {
 					main: {
-						templateUrl: '/template/archive.html',
+						templateUrl: 'template/archive.html',
 						controller: 'Archive'
 					}
 				}
@@ -50,7 +50,7 @@
 				url: '/page/{paged:int}',
 				views: {
 					main: {
-						templateUrl: '/template/archive.html',
+						templateUrl: '../template/archive.html',
 						controller: 'Archive'
 					}
 				}
@@ -59,7 +59,7 @@
 				url: '/archives/:tax/{terms:.+/?}/page/{paged:int}',
 				views: {
 					main: {
-						templateUrl: '/template/archive.html',
+						templateUrl: '../template/archive.html',
 						controller: 'Archive'
 					}
 				}
@@ -68,7 +68,7 @@
 				url: '/archives/:tax/{terms:.+/?}',
 				views: {
 					main: {
-						templateUrl: '/template/archive.html',
+						templateUrl: '../template/archive.html',
 						controller: 'Archive'
 					}
 				}
@@ -77,7 +77,7 @@
 				url: '/archives/:ID',
 				views: {
 					main: {
-						templateUrl: '/template/single.html',
+						templateUrl: '../template/single.html',
 						controller: 'Single'
 					}
 				}
@@ -86,13 +86,13 @@
 				url: '/{pagename:.*}',
 				views: {
 					main: {
-						templateUrl: '/template/page.html',
+						templateUrl: '../template/page.html',
 						controller: 'Pages'
 					}
 				}
 			})
 			.state('404', {
-				templateUrl: '/template/404.html'
+				templateUrl: '../template/404.html'
 			});
 
 		cfpLoadingBarProvider.includeBar = true;

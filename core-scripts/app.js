@@ -82,6 +82,7 @@
 					}
 				}
 			})
+			/*
 			.state('page', {
 				url: '/mak/{pagename:.*}',
 				views: {
@@ -91,6 +92,7 @@
 					}
 				}
 			})
+			*/
 			.state('404', {
 				templateUrl: '../template/404.html'
 			});

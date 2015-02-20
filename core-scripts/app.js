@@ -29,7 +29,7 @@
 
 		$locationProvider.html5Mode(true);
 		$locationProvider.hashPrefix('!');
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/mak');
 		$urlRouterProvider.rule(function($injector, $location) {
 			var path = $location.url();
 			if ('/' === path[path.length - 1]) return path.replace(/\/$/, '')
@@ -38,7 +38,7 @@
 		});
 		$stateProvider
 			.state('home', {
-				url: '/',
+				url: '/mak',
 				views: {
 					main: {
 						templateUrl: 'template/archive.html',
@@ -47,7 +47,7 @@
 				}
 			})
 			.state('homepaged', {
-				url: '/page/{paged:int}',
+				url: '/mak/page/{paged:int}',
 				views: {
 					main: {
 						templateUrl: '../template/archive.html',
@@ -56,7 +56,7 @@
 				}
 			})
 			.state('paged', {
-				url: '/archives/:tax/{terms:.+/?}/page/{paged:int}',
+				url: '/mak/archives/:tax/{terms:.+/?}/page/{paged:int}',
 				views: {
 					main: {
 						templateUrl: '../template/archive.html',
@@ -65,7 +65,7 @@
 				}
 			})
 			.state('archives', {
-				url: '/archives/:tax/{terms:.+/?}',
+				url: '/mak/archives/:tax/{terms:.+/?}',
 				views: {
 					main: {
 						templateUrl: '../template/archive.html',
@@ -74,7 +74,7 @@
 				}
 			})
 			.state('single', {
-				url: '/archives/:ID',
+				url: '/mak/archives/:ID',
 				views: {
 					main: {
 						templateUrl: '../template/single.html',
@@ -83,7 +83,7 @@
 				}
 			})
 			.state('page', {
-				url: '/{pagename:.*}',
+				url: '/mak/{pagename:.*}',
 				views: {
 					main: {
 						templateUrl: '../template/page.html',

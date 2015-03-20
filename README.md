@@ -12,7 +12,7 @@ or now the explanations are midway, since this work is still in progress.
 ## Tag
 - ID : {{mak_post_id()}}
 - Permalink : {{mak_permalink()}}
-- Title : {{mak_title()}}
+- Title : {{mak_entry_title()}}
 - Author ID : {{mak_author_id()}}
 - Author Avatar : {{mak_author_avatar()}}
 - Author Description : {{mak_author_description()}}

@@ -1,30 +1,26 @@
 <?php
 /**
- * Plugin Name: WP Rest API Kit
+ * Plugin Name: Media Assembly Kit
  * Plugin URI:
  * Description:
- * Version:     0.1.0
+ * Version:     0.7.1
  * Author:      Webnist
  * Author URI:  https://profiles.wordpress.org/webnist
  * License: GPLv2 or later
- * Text Domain: wp_rest_api_kit
+ * Text Domain: media-assembly-kit
  * Domain Path: /languages
  */
 
-if ( ! class_exists( 'WPRestAPIKitAdmin' ) )
+if ( ! class_exists( 'MediaAssemblyKitAdmin' ) )
 	require_once( dirname(__FILE__) . '/includes/admin.php' );
 
-if ( ! class_exists( 'WPRestAPIKitFilter' ) )
+if ( ! class_exists( 'MediaAssemblyKitFilter' ) )
 	require_once( dirname(__FILE__) . '/includes/filter.php' );
 
-
-if ( ! class_exists( 'WPRestAPIKitEndpointQuery' ) )
-	require_once( dirname(__FILE__) . '/includes/query-endpoint.php' );
-
-if ( ! class_exists( 'WPRestAPIKitEndpointMenus' ) )
+if ( ! class_exists( 'MediaAssemblyKitMenus' ) )
 	require_once( dirname(__FILE__) . '/includes/menus-endpoint.php' );
 
-class WPRestAPIKitEndpointInit {
+class MediaAssemblyKitInit {
 
 	public function __construct() {
 
@@ -46,19 +42,17 @@ class WPRestAPIKitEndpointInit {
 
 		// Options
 		$this->default_options = array(
-			'access_control_allow_origin_all' => 0,
-			'destination_url'                 => '',
+			'destination_url' => '',
 		);
-		$this->options                         = get_option( 'wp_rest_api_kit', $this->default_options );
-		$this->destination_url                 = $this->options['destination_url'] ? $this->options['destination_url'] : '';
+		$this->options         = get_option( 'mediaassemblykit', $this->default_options );
+		$this->destination_url = $this->options['destination_url'] ? $this->options['destination_url'] : '';
 
 		// Load textdomain
 		load_plugin_textdomain( $this->domain, false, $this->name . $this->domain_path );
 	}
 
 }
-new WPRestAPIKitEndpointInit();
-new WPRestAPIKitAdmin();
-new WPRestAPIKitFilter();
-new WPRestAPIKitEndpointQuery();
-new WPRestAPIKitEndpointMenus();
+new MediaAssemblyKitInit();
+new MediaAssemblyKitAdmin();
+new MediaAssemblyKitFilter();
+new MediaAssemblyKitMenus();

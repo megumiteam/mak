@@ -43,7 +43,7 @@
 			permalink: function($post) {
 				return $post.link;
 			},
-			title: function($post) {
+			entry_title: function($post) {
 				return $post.title;
 			},
 			author_id: function($post) {

@@ -1,9 +1,9 @@
 <?php
 /**
- * Name: Menus Endpoint
+ * Name: Media Assembly Kit Menus Endpoint
  */
 
-class WPRestAPIKitEndpointMenus extends WPRestAPIKitEndpointInit {
+class MediaAssemblyKitMenus extends MediaAssemblyKitInit {
 
 	public function __construct() {
 		parent::__construct();

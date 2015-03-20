@@ -14,7 +14,7 @@
 				<img class="thumbnail-{{mak_thumbnail('full').id}}" ng-src="{{mak_thumbnail('full').url}}" width="{{mak_thumbnail('full').width}" height="{{mak_thumbnail('full').height}}" alt="{{mak_thumbnail('full').title}}"><!-- On thumbnail -->
 			</a>
 		</p>
-		<h1 class="entry-title"><a ng-href="{{mak_permalink()}}">{{mak_title()}}</a></h1>
+		<h1 class="entry-title"><a ng-href="{{mak_permalink()}}">{{mak_entry_title()}}</a></h1>
 		<p class="posted-in-category" ng-if="!!mak_terms()">
 			<i class="fa fa-folder-open-o"></i>
 			<a ng-href="{{term.link}}" title="{{term.name}}" ng-repeat="term in mak_terms()">{{term.name}}</a>
@@ -30,4 +30,3 @@
 </article><!-- #post-## -->
 {{totalpages}}
 {{total}}
-

@@ -17,18 +17,6 @@
 		});
 	});
 
-	makController.controller('SideBar', function($scope, makConfig, makQuery, makMenu) {
-		var $apiurl = makConfig.apiUrl;
-		var $menu_id = makConfig.menu_id;
-		var $url = $apiurl + 'wp-json/taxonomies/category/terms/?'
-		+ [
-			'callback=JSON_CALLBACK'
-		].join('&');
-		makQuery.wp_posts($url).query().$promise.then(function(data) {
-			$scope.mak_categories = data;
-		});
-	});
-
 	makController.controller('the_post', function($scope, makPost) {
 		var $post = $scope.wp_post;
 		var $terms = $post.terms;
@@ -38,8 +26,8 @@
 		$scope.mak_permalink = function() {
 			return makPost.permalink($post);
 		};
-		$scope.mak_title = function() {
-			return makPost.title($post);
+		$scope.mak_entry_title = function() {
+			return makPost.entry_title($post);
 		};
 		$scope.mak_author_id = function() {
 			return makPost.author_id($post);

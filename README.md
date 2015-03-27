@@ -2,7 +2,7 @@
 
 # May not be available in future versions of WP REST API.
 
-or now the explanations are midway, since this work is still in progress.
+for now the explanations are midway, since this work is still in progress.
 
 - archive.html
 - author.html

@@ -13,8 +13,8 @@ class MediaAssemblyKitFilter extends MediaAssemblyKitInit {
 	}
 
 	public function wp_headers( $headers, $headers_this ) {
-		if ( $headers_this->query_vars['json_route'] && ! empty( $this->destination_url ) ) {
-			$headers['Access-Control-Allow-Origin']      = $this->destination_url;
+		if ( $headers_this->query_vars['json_route'] && ! empty( $this->access_control_url ) ) {
+			$headers['Access-Control-Allow-Origin']      = $this->access_control_url;
 			$headers['Access-Control-Allow-Credentials'] = 'true';
 			$headers['Access-Control-Expose-Headers']    = 'Origin, X-Requested-With, Content-Type, Accept, X-WP-Total, X-WP-TotalPages, Link';
 		}

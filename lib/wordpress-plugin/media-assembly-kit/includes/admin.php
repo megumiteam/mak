@@ -23,7 +23,7 @@ class MediaAssemblyKitAdmin extends MediaAssemblyKitInit {
 	}
 
 	public function add_admin_edit_page() {
-		echo '<div class="wrap" id="wp-rest-api-kit-options">' . "\n";
+		echo '<div class="wrap" id="media-assembly-kit-options">' . "\n";
 		echo '<h2>' . esc_html( get_admin_page_title() ) . '</h2>' . "\n";
 		echo '<form method="post" action="options.php">' . "\n";
 		settings_fields( $this->basename  );
@@ -43,13 +43,24 @@ class MediaAssemblyKitAdmin extends MediaAssemblyKitInit {
 			$this->basename
 		);
 		add_settings_field(
-			'wp-rest-api-kit-destination_url',
+			'media-assembly-kit-access_control_url',
+			__( 'Access-Control-Allow-Origin URL', $this->domain ),
+			array( &$this, 'text_field' ),
+			$this->basename,
+			'general',
+			array(
+				'name'  => 'mediaassemblykit[access_control_url]',
+				'value' => $this->access_control_url,
+			)
+		);
+		add_settings_field(
+			'media-assembly-kit-destination_url',
 			__( 'Destination URL', $this->domain ),
 			array( &$this, 'text_field' ),
 			$this->basename,
 			'general',
 			array(
-				'name'  => 'wp_rest_api_kit[destination_url]',
+				'name'  => 'mediaassemblykit[destination_url]',
 				'value' => $this->destination_url,
 			)
 		);
@@ -69,10 +80,11 @@ class MediaAssemblyKitAdmin extends MediaAssemblyKitInit {
 	}
 
 	public function add_register_setting() {
-		register_setting( $this->basename, 'wp_rest_api_kit', array( &$this, 'register_setting_check' ) );
+		register_setting( $this->basename, 'mediaassemblykit', array( &$this, 'register_setting_check' ) );
 	}
 
 	public function register_setting_check( $value ) {
+		$value['access_control_url'] = $value['access_control_url'];
 		$value['destination_url'] = untrailingslashit( esc_url( $value['destination_url'] ) );
 		return $value;
 	}

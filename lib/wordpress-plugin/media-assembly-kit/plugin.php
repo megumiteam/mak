@@ -42,10 +42,12 @@ class MediaAssemblyKitInit {
 
 		// Options
 		$this->default_options = array(
-			'destination_url' => '',
+			'access_control_url' => '',
+			'destination_url'    => '',
 		);
-		$this->options         = get_option( 'mediaassemblykit', $this->default_options );
-		$this->destination_url = $this->options['destination_url'] ? $this->options['destination_url'] : '';
+		$this->options            = get_option( 'mediaassemblykit', $this->default_options );
+		$this->access_control_url = $this->options['access_control_url'] ? $this->options['access_control_url'] : '';
+		$this->destination_url    = $this->options['destination_url'] ? $this->options['destination_url'] : '';
 
 		// Load textdomain
 		load_plugin_textdomain( $this->domain, false, $this->name . $this->domain_path );
